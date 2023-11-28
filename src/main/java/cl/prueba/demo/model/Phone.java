@@ -2,11 +2,13 @@ package cl.prueba.demo.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import lombok.Data;
 
 @Data
@@ -21,19 +23,19 @@ public class Phone implements Serializable{
 	/** The id. */
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public Integer id;
+	private Integer id;
 	
     /** The number. */
-    public String number;
+	private String number;
     
     /** The citycode. */
-    public String citycode;
+	private String citycode;
     
     /** The contrycode. */
-    public String contrycode;
+	private String contrycode;
     
     /** The usuario. */
-    @ManyToOne
-    public Usuario usuario;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Usuario usuario;
 
 }

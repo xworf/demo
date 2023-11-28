@@ -1,7 +1,7 @@
 package cl.prueba.demo.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -18,27 +18,30 @@ public class UsuarioResponse implements Serializable{
 	/** id del usuario. */
 	private Integer id;
 	/** The name. */
-	public String name;
+	private String name;
     
     /** The email. */
-    public String email;
+	private String email;
     
     /** The password. */
-    public String password;
+	private String password;
 	
 	/** fecha de creación del usuario. */
-	private Date created;
+	private String created;
 	
 	/** fecha de la última actualización de usuario. */
-	private Date modified;
+	private String modified;
 	
 	/** Fecha del último ingreso (en caso de nuevo usuario, va a coincidir con la fecha de creación). */
-	private Date lastLogin;
+	private String lastLogin;
 	
 	/** Token de acceso de la API. */
 	private String token;
 	
 	/** Indica si el usuario sigue habilitado dentro del sistema. */
 	private Boolean isactive;
+	
+	/** The phones. */
+	private List<PhoneResponse> phones;
    
 }

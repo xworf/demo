@@ -3,7 +3,7 @@
 ### Requisitos
 Para ejecutar la aplicacion se debe tener como minimo instalado:
 *	Java 11
-*	Gradle 8.2
+*	Gradle 8.4
 *	GIT
 *	Sistema Operativo compatible
 
@@ -17,13 +17,15 @@ Las siguientes son las instrucciones para ejecutar la aplicacion:
 * Ejecutar en el directorio de descarga el comando en la consola(CMD:): gradle build 
 * En la Carpeta de usuario (c:\users\xxx), crear un archivo con el nombre demoPrueba.mv.db
 * Ejecutar en el mismo directorio el comando: java -jar build/app.jar
+* Documentacion Servicios: http://localhost:8080/v2/api-docs
+* Swagger configurado en: http://localhost:8080/swagger-ui/index.html
 * Con alguna app o cliente de ApiRest (como postman), agregar las siguientes llamadas:
 	1. Guardar  usuario: http://localhost:8080/usuarioRest/guardarUsuario
 		como body poner :
 		{
 			"name": "Juan Rodriguez",
-			"email": "juan@rodriguez.org11",
-			"password": "hunter2",
+			"email": "juan@rodriguez.org",
+			"password": "Geeks@portal20",
 			"phones": [
 				{
 				"number": "1234567",
@@ -33,12 +35,12 @@ Las siguientes son las instrucciones para ejecutar la aplicacion:
 				]
 			}
 		
-		o ejectutar con Curl: curl --location 'http://localhost:8080/usuarioRest/guardarUsuario' \
+		o ejecutar con Curl: curl --location 'http://localhost:8080/usuarioRest/guardarUsuario' \
 									--header 'Content-Type: application/json' \
 									--data-raw '{
 									"name": "Juan Rodriguez",
 									"email": "juan@rodriguez.org",
-									"password": "hunter2",
+									"password": "Geeks@portal20",
 									"phones": [
 									{
 									"number": "1234567",
@@ -47,7 +49,8 @@ Las siguientes son las instrucciones para ejecutar la aplicacion:
 									}
 									]
 									}'
-
+	2. buscar un usuario por mail:
+		curl --location 'http://localhost:8080/usuarioRest/consultarUsuario?email=a%40lla.cl'
 
 Para validar su guarda en la base de datos H2 en memoria, acceder a http://localhost:8080/h2-console
 	Usar las credenciales del archivo de application.properties
