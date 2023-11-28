@@ -66,7 +66,7 @@ public class UsuarioService implements IUsuarioService {
 			traspasarDatos(resuResponse, save, userFull.get()); 
 			
 		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST , "Correo ya existe");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST , "El correo ya registrado");
 		}
 		
 		return resuResponse;

@@ -16,7 +16,7 @@ Las siguientes son las instrucciones para ejecutar la aplicacion:
 * Descargar desde Github: 
 * Ejecutar en el directorio de descarga el comando en la consola(CMD:): gradle build 
 * En la Carpeta de usuario (c:\users\xxx), crear un archivo con el nombre demoPrueba.mv.db
-* Ejecutar en el mismo directorio el comando: java -jar build/app.jar
+* Importar el proyecto en eclipse y ejecutar la clase cl.prueba.demo.DemoAppApplication.java
 * Documentacion Servicios: http://localhost:8080/v2/api-docs
 * Swagger configurado en: http://localhost:8080/swagger-ui/index.html
 * Con alguna app o cliente de ApiRest (como postman), agregar las siguientes llamadas:
